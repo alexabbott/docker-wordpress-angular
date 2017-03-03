@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>AngularJS + WordPress REST API</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-sanitize.js"></script>
+</head>
+<body>
+    <div ng-app="wpApp">
+        <section ng-controller="DataController">
+            <div ng-repeat="post in posts">
+                <h2>{{ post.title.rendered }}</h2>
+                <span ng-bind-html="post.content.rendered"></span>
+                <hr>
+            </div>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
