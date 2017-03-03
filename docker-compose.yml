@@ -20,12 +20,12 @@ services:
       - wordpress_data:/bitnami/wordpress
       - apache_data:/bitnami/apache
       - php_data:/bitnami/php
-    environment:
-      PLUGINS: >-
-        advanced-custom-fields
 
   frontend:
     build: ./frontend
+    depends_on:
+      - mariadb
+      - wordpress
     command: node_modules/.bin/nodemon index.js
     environment:
       NODE_ENV: development
